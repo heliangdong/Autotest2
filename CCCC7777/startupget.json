@@ -1,0 +1,53 @@
+﻿[
+  {
+    "description":"这是一个没有参数的get请求",
+    "request":{
+      "uri":"/getdemo",
+      "method":"get"
+    },
+    "response":{
+      "text":"这是一个没有参数的get请求"
+    }
+  },
+  {
+    "description":"这是一个有参数的get请求",
+    "request":{
+      "uri":"/getwithparm",
+      "method":"get",
+      "queries":{
+        "name":"zhangsan",
+        "age":"18"
+      }
+    },
+    "response":{
+      "text":"zhangsan 18 back回来"
+    }
+  },
+  {
+    "description": "这是一个待参数的get请求",
+    "request": {
+      "uri": "/getwithcooker",
+      "method": "get",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "get with cookies参数"
+    }
+  },
+  {
+    "description":"这是一个返回COOKIES",
+    "request":{
+      "uri":"/responsewithcooker",
+      "method":"get"
+    },
+    "response":{
+      "cookies":{
+        "login":"fail"
+      },
+      "text":"response with cookies参数"
+    }
+  }
+
+]

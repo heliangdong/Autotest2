@@ -1,0 +1,53 @@
+[
+  {
+    "description":"这是一个没有参数的get请求",
+    "request":{
+      "uri":"/postdemo",
+      "method":"post"
+    },
+    "response":{
+      "text":"first post response返回"
+    }
+  },
+  {
+    "description":"这是一个待参数的get请求",
+    "request":{
+      "uri":"/postwithparamer",
+      "method":"post",
+      "forms":{
+        "name":"zhangsan",
+        "age":"18"
+      }
+    },
+    "response":{
+      "text":"response with paramer参数"
+    }
+  },
+  {
+    "description":"这是一个待参数的get请求",
+    "request":{
+      "uri":"/postwithcooker",
+      "method":"post",
+      "cookies":{
+        "login":"true"
+      }
+    },
+    "response":{
+      "text":"response with cookies参数"
+    }
+  }
+,
+  {
+    "description":"这是一个待参数的get请求",
+    "request":{
+      "uri":"/postwithcooker",
+      "method":"post",
+      "cookies":{
+        "login":"true"
+      }
+    },
+    "response":{
+      "text":"response with cookies参数"
+    }
+  }
+  ]
