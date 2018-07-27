@@ -44,7 +44,7 @@
     },
     "response":{
       "cookies":{
-        "login":"fail"
+        "login":"true"
       },
       "text":"response with cookies参数"
     }

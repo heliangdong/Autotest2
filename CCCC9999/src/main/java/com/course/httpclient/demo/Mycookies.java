@@ -18,6 +18,7 @@ public class Mycookies {
 
     private String url;
     private ResourceBundle bundle;
+    private CookieStore  store;
     @BeforeClass
     public void beforetest(){
         //去配置文件拿变量
@@ -39,7 +40,7 @@ public class Mycookies {
          String result= EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
         //getCOOKER
-        CookieStore  store= client.getCookieStore();
+          store= client.getCookieStore();
         List<Cookie> cookieList=store.getCookies();
 
         for(Cookie cookie:cookieList){
@@ -50,9 +51,28 @@ public class Mycookies {
         }
     }
     @Test(dependsOnMethods = {"test"})
-    public void test2(){
+    public void test2() throws IOException {
       //  bundle=ResourceBundle.getBundle("application",Locale.CANADA);
-        url=bundle.getString("test.ur2");
+        String uri=bundle.getString("getcookies.url2");
+        String testurl=this.url+uri;
+
+        HttpGet get=new HttpGet(testurl);
+        DefaultHttpClient client=new DefaultHttpClient();
+
+        //设置COOKIES
+        client.setCookieStore(this.store);
+
+        HttpResponse response=client.execute(get);
+        //获取相应吗
+        int statusCode=response.getStatusLine().getStatusCode();
+
+        System.out.println("statusCode"+statusCode);
+
+        if(statusCode==200){
+            String result= EntityUtils.toString(response.getEntity(),"utf-8");
+            System.out.println("result是"+result);
+        }
+
 
 
 
