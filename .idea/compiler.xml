@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="CCCC6666" />
         <module name="CCCC9999" />
+        <module name="CCCCC10" />
+        <module name="CCCCC11" />
       </profile>
     </annotationProcessing>
   </component>
